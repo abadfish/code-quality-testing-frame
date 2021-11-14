@@ -1,7 +1,8 @@
 function getAverageStarsPerRepos(repoList: Repository[]):number{
-    const sumStarts = repoList.reduce((acc:number, repo:Repository) => acc + repo.stargazers_count, 0);
+    if(repoList.length === 0) return 0
+    const sumStars = repoList.reduce((acc:number, repo:Repository) => acc + repo.stargazers_count, 0);
     
-    return sumStarts / repoList.length;
+    return sumStars / repoList.length;
 }
 
 export default getAverageStarsPerRepos;
